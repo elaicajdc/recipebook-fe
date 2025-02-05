@@ -23,5 +23,6 @@ export async function updatePhoto(formData) {
 }
 
 export async function deleteRecipe(id) {
+    console.log(`${API_URL}/${id}`);
     return await axios.delete(`${API_URL}/${id}`);
 }

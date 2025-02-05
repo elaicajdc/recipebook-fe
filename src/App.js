@@ -22,10 +22,19 @@ function App() {
   });
   const modalRef = useRef();
   const fileRef = useRef();
+  
   //updates data on change
   const onChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   }
+
+  useEffect(() => {
+    const message = localStorage.getItem('toastMessage');
+    if (message) {
+      toastSuccess(message);
+      localStorage.removeItem('toastMessage');
+    }
+  }, []);
 
   const toggleModal = (show) => {
     show ? modalRef.current.showModal() : modalRef.current.close();

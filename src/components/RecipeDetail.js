@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
-import { getRecipe } from '../api/RecipeService';
+import { deleteRecipe, getRecipe } from '../api/RecipeService';
 import { toastError, toastSuccess } from '../api/ToastService';
 import { ToastContainer } from 'react-toastify';
 const RecipeDetail = ({ updateRecipe, updateImage }) => {
@@ -40,6 +40,19 @@ const RecipeDetail = ({ updateRecipe, updateImage }) => {
     event.preventDefault();
     await updateRecipe(recipe);
     fetchRecipe(id);
+  }
+
+  const deleteFn = async (event) => {
+    try {
+      event.preventDefault();
+      await deleteRecipe(recipe.id);
+      localStorage.setItem('toastMessage', 'Deleted successfully');
+      window.location.href = '/';
+    } catch (error) {
+      toastError(error.message);
+      console.log(error);
+    }
+    
   }
 
   const updatePhotoFn = async (file) => {
@@ -99,6 +112,7 @@ const RecipeDetail = ({ updateRecipe, updateImage }) => {
             </div>
             <div className="form_footer">
               <button type="submit" className="btn">Save</button>
+              <button type="" onClick={deleteFn} className="btn btn-danger">Delete</button>
             </div>
           </form>
         </div>

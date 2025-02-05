@@ -1,8 +1,8 @@
 :root {
-	--selective-blue: hsl(210, 69%, 25%);
-	--selective-blue-2: hsl(210, 69%, 19%);
-	--selective-blue-3: hsl(210, 69%, 35%);
-	--sky-blue: hsl(220, 48%, 90%);
+	--selective-blue: hsl(161, 62%, 39%);
+	--selective-blue-2: hsl(161, 62%, 39%);
+	--selective-blue-3: hsl(161, 91%, 22%);
+	--sky-blue: hsl(199, 60%, 64%);
 	--light-gray: hsl(233, 100%, 98%);
 	--light-gray-2: hsl(233, 100%, 88%);
 	--dark-gray: hsl(225, 20%, 48%);
@@ -18,7 +18,7 @@
 	--body-bg: #f8f9fa;
 
 	--quick-silver: hsl(0, 0%, 65%);
-	--radical-red: hsl(351, 83%, 61%);
+	--radical-red: hsl(0, 94%, 66%);
 	--isabelline: hsl(36, 33%, 94%);
 	--gray-x-11: hsl(0, 0%, 73%);
 	--kappel_15: hsla(170, 75%, 41%, 0.15);
@@ -28,8 +28,8 @@
 	--white_50: hsla(0, 0%, 100%, 0.5);
 	--black_50: hsla(0, 0%, 0%, 0.5);
 	--black_30: hsla(0, 0%, 0%, 0.3);
-	--kappel: hsl(170, 75%, 41%);
-	--kappel: hsl(195, 71%, 31%);
+	--kappel: hsl(161, 62%, 39%);
+	--kappel: hsl(161, 91%, 22%);
 
 	/**
 	 * gradient color
@@ -120,7 +120,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: hsl(0, 0%, 70%);
+	background: hsl(0, 0%, 50%);
 }
 
 body {
@@ -227,7 +227,7 @@ i {
 }
 
 .btn-danger:hover {
-	background-color: hsl(351, 81%, 65%);
+	background-color: hsl(0, 41%, 50%);
 }
 
 .bi-plus-square {
@@ -578,13 +578,16 @@ input[type=file]::file-selector-button:hover {
 
 .form_footer {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	margin-top: 35px;
+
 }
 
 .form_footer .btn {
-	padding: 7px 15px;
+	background-color: '#25a079';
+	padding: 7px 20px;
+	margin: 0px 10px;
 }
 
 @media(max-width: 584px) {
